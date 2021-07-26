@@ -1,0 +1,15 @@
+1) To add variable to the unity inspector we use [SerializeField] before the variable declaration.
+
+[SerializeField] float moveSpeed = 1.3f;
+
+******************************************************************************************************
+
+2) To make our game framerate independent we should use Time.deltaTime in update function.
+
+// Update is called once per frame
+    void Update()
+    {
+        float xValue = (Input.GetAxis("Horizontal") * Time.deltaTime) * moveSpeed;
+        float zValue = (Input.GetAxis("Vertical") * Time.deltaTime) * moveSpeed;
+        transform.Translate(xValue,0,zValue);
+    }
